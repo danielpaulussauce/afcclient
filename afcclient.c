@@ -506,6 +506,7 @@ int cmd_main(afc_client_t afc, int argc, char **argv)
 #define OPTION_FLAGS "rs:a:u:vh"
 void usage(FILE *outf)
 {
+    printf("HAcked By Daniel to remove UDID");
     fprintf(outf,
         "Usage: %s [%s] command cmdargs...\n\n"
         "  Options:\n"
@@ -566,11 +567,6 @@ int main(int argc, char **argv)
                 break;
 
             case 'u':
-                if ((strlen(optarg) != 40)) {
-                    fprintf(stderr, "Error: invalid udid (wrong length): %s\n", optarg);
-                    return EXIT_FAILURE;
-                }
-
                 udid = optarg;
                 break;
 
